@@ -1,0 +1,28 @@
+import javax.swing.JOptionPane;
+
+public class CalculadoraNotas {
+
+	public static void main(String[] args) {
+		Double testeProgresso  = 0.0, provaDissertativa = 0.0, atividadePratica = 0.0, aps = 0.0 , n2 = 0.0;
+		try {
+
+			
+			 testeProgresso = Double.parseDouble(JOptionPane.showInputDialog("Digite a nota do teste de progresso"));
+			 provaDissertativa = Double.parseDouble(JOptionPane.showInputDialog("Digite a nota da prova dissertativa"));
+			 atividadePratica = Double.parseDouble(JOptionPane.showInputDialog("Digite a nota da atividade pratica"));
+			 
+			 aps = Double.parseDouble(JOptionPane.showInputDialog("Digite a nota da aps"));
+			 n2 = Double.parseDouble(JOptionPane.showInputDialog("Digite a nota da N2"));
+		} catch (NumberFormatException e) {
+			JOptionPane.showMessageDialog(null, "[ERROR] Os valores digitados não são numeros , impossivel calcular!");
+		}
+		
+		Double mediaN1 = (testeProgresso + provaDissertativa + atividadePratica) / 3;
+		Double mediaN2 = (aps * 0.1 + n2 * 0.9);
+		Double mediaFinal = (mediaN1 * 0.4 + mediaN2 * 0.6);
+		
+		JOptionPane.showMessageDialog(null, "A média final é: " + mediaFinal);
+		
+	}
+
+}

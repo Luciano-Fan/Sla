@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1585871963 source:c:\users\lucia\desktop\atividadeparadigma\main.c
+	<stdio.h>
+	<stdlib.h>
+

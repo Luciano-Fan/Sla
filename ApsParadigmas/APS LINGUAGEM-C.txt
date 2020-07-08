@@ -1,0 +1,33 @@
+int main() {
+    float testeProgresso = 0;
+    float provaDissertativa = 0;
+    float atividadePratica = 0;
+    float aps = 0;
+    float n2 = 0;
+    float mediaN1 = 0;
+    float mediaN2 = 0;
+    float mediaFinal = 0;
+
+    printf("Digite a nota do teste e Progresso\n");
+    scanf("%i \n", &testeProgresso);
+
+    printf("Digite a nota da prova dissertativa\n");
+    scanf("%f \n", &provaDissertativa);
+
+    printf("Digite a nota da atividade pratica\n");
+    scanf("%f \n", &atividadePratica);
+
+    printf("Digite a nota da APS\n");
+    scanf("%f \n", &aps);
+
+    printf("Digite a nota da N2\n");
+    scanf("%f \n", &n2);
+
+    mediaN1 = ((testeProgresso + provaDissertativa + atividadePratica)/3);
+    mediaN2 = (aps * 0.1)+(n2*0.9);
+    mediaFinal = (mediaN1*0.4)+(mediaN2*0.6);
+
+    printf("A media final e: %.2f", mediaFinal);
+
+    return 0;
+}

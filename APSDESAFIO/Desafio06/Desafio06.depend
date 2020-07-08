@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1538838160 source:c:\users\lucia\desktop\desafio06\main.c
+	<stdio.h>
+	<stdlib.h>
+

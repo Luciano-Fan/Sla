@@ -1,0 +1,17 @@
+main = do
+  putStrLn "Digite o primeiro lado"
+  primeiroLado <- getLine
+  putStrLn "Digite o segundo lado"
+  tentandoConsertarPart1 <- getLine
+  segundoLado <- getLine
+  putStrLn "Digite o terceiro lado"
+  tentandoConsertarPart2 <- getLine
+  terceiroLado <- getLine
+    
+  if primeiroLado == segundoLado && segundoLado == terceiroLado
+    then putStrLn "Triangulo Equilatero"
+    else
+      if primeiroLado == segundoLado || segundoLado == terceiroLado || primeiroLado == terceiroLado
+        then putStrLn "Triangulo Isosceles"
+      else putStrLn "Triangulo Escaleno"
+  

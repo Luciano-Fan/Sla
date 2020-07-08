@@ -1,0 +1,44 @@
+class Nota:
+
+
+    def calcularN1(self,provaDissertativa,testeProgresso,atividadePratica):
+        
+        mediaN1 = ((provaDissertativa + atividadePratica + testeProgresso)/3)
+
+        return mediaN1
+
+    def calcularN2(self,aps,provaN2):
+
+        mediaN2 = (aps * 0.1)+(provaN2*0.9)
+
+        return mediaN2
+
+    def calcularMediaFinal(self,mediaN1,mediaN2):
+        
+        mediaFinal = (mediaN1*0.4)+(mediaN2*0.6)
+
+        return mediaFinal
+
+
+class App:
+    
+    try:
+
+        provaDissertativa = float(input("Digite a nota da Prova Dissertativa: "))
+        testeProgresso = float(input("Digite a nota do Teste de Progresso: "))
+        atividadePratica = float(input("Digite a nota da Atividade Pratica: "))
+
+        aps = float(input("Digite a nota da APS: "))
+        n2 = float(input("Digite a nota da prova N2: "))
+
+        n = Nota()
+
+        mediaN1 = n.calcularN1(provaDissertativa,testeProgresso,atividadePratica)
+        mediaN2 = n.calcularN2(aps,n2)
+        mediaFinal = n.calcularMediaFinal(mediaN1,mediaN2)
+
+        print("A sua media final foi de: ", format(mediaFinal,'.2f'))
+
+    except ValueError:
+
+        print("Os valores digitados nao sao numeros, impossivel calcular!")

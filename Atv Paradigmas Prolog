@@ -1,0 +1,58 @@
+sayajin(goku).
+
+sayajin(vegeta).
+
+sayajin(gohan).
+
+sayajin(goten).
+
+sayajin(trunks).
+
+vilao(cell).
+
+vilao(majinboo).
+
+vilao(freeza).
+
+poder(goku , 11000).
+
+poder(vegeta , 10500).
+
+poder(gohan , 10000).
+
+poder(trunks , 7000).
+
+poder(goten , 6900).
+
+poder(cell , 13000).
+
+poder(freeza , 11000).
+
+poder(majinboo, 18000).
+
+transformarSSJ(X):-
+    sayajin(X).
+
+sao_inimigos(X,Y):-
+   sayajin(X),
+   vilao(Y).
+
+fusao(X,Y):-
+    sayajin(X),
+    sayajin(Y).
+
+mais_poderoso(X , Y) :- 
+    poder(X,A), 
+    poder(Y,B),
+    A > B.
+
+dano(X,Y,Dano):-
+    poder(X,Poder1),
+    poder(Y,Poder2),
+    Dano is (Poder1//50) - (Poder2//90).
+
+?-sao_inimigos(goku,majinboo)
+?-mais_poderoso(goku,vegeta)
+?-transformarSSJ(gohan)
+?-fusao(trunks,goten)
+?-dano(goku,cell,Dano)

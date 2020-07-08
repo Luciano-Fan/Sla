@@ -1,0 +1,189 @@
+#include <stdio.h>
+
+void arremessoPeso(){
+
+  int vencedor;
+  int vencedorSegundoArremeco;
+  float distancia; 
+  int numeroCompetidores;
+  int placar = 1;
+
+  float maiorArremeco = 0.0;
+  float segundoMaiorArremeco = 0.0;
+
+ 
+  printf("DIGITE A QUANTIDADE DE COMPETIDORES\n");
+  scanf("%i" , &numeroCompetidores);
+  int competidores [numeroCompetidores];
+
+  for (int i = 0; i < numeroCompetidores; i++){
+
+    for(int j = 0; j < 3; j++){
+      printf("digite o arremesso %i\n", j+1);
+      scanf("%f" , &distancia);
+
+      if (distancia > maiorArremeco){
+        if (vencedor == i){
+          segundoMaiorArremeco = maiorArremeco;
+        }
+        maiorArremeco = distancia;
+        vencedor = i;
+        placar = 1;
+
+      } else if (distancia == maiorArremeco) {
+        placar = 2;
+
+      }else if (distancia > segundoMaiorArremeco) {
+        segundoMaiorArremeco = distancia;
+        vencedorSegundoArremeco = i;
+      }
+    } 
+
+   }
+   if (placar == 1){
+     printf("O competidor %i eh o vencedor\n", vencedor);
+   } else {
+     printf("O competidor %i eh o vencedor\n", vencedorSegundoArremeco);
+   }
+
+}
+void ginArtistica(){
+  int vencedor;
+  float menorNota = 666;
+  float maiorNota = 0.0;
+  float notaFinal = 0.0;
+  int qtdCompetidores;
+  float nota = 0.0;
+
+  printf("\nDigite a quantidade de competidores\t");
+  scanf("%d",&qtdCompetidores);
+  int competidores [qtdCompetidores];
+
+  for (int i = 0; i < qtdCompetidores;i++){
+    printf("Competidor %i",i);
+    for (int j = 0; j < 5;j++){
+
+      printf("\nDigite a nota %i:\t",j+1);
+      scanf("%f",&nota);
+      notaFinal = notaFinal + nota;
+
+      if (nota < menorNota){
+        menorNota = nota;
+      }
+
+    }
+    notaFinal = notaFinal - menorNota;
+    
+    if(notaFinal > maiorNota){
+
+      maiorNota = notaFinal;
+      vencedor = i;
+    }
+    notaFinal = 0.0;
+    nota = 0.0;
+  }
+  printf("O competidor %i eh o vencedor\n",vencedor);
+
+
+}
+void judo(){
+
+  int yuko [2];
+	int wazari [2];
+	int ippon [2];
+
+  for (int i = 0; i < 2; i++){
+    printf("\nDigite a quantidade de yuko do competidor %i\n",i+1);
+    scanf("%i",&yuko[i]);
+    printf("Digite a quantidade de wazari do competidor %i\n",i+1);
+    scanf("%i",&wazari[i]);
+    printf("Digite a quantidade de ippon do competidor %i\n",i+1);
+    scanf("%i",&ippon[i]);
+  }
+  if (ippon[0] > 0) {
+    printf("O vencedor é o competidor 0\n");
+
+    } else if (ippon[1] > 0) {
+      printf("O vencedor é o competidor 1\n");
+
+    } else if (wazari[0] > 0 || wazari [1] > 0){
+
+      if (wazari[0] > wazari[1]){
+        printf("O vencedor eh o competidor 1\n");
+
+      }else if (wazari[0] < wazari[1]){
+        printf("O vencedor eh o competidor 2\n");
+      }
+      else if (yuko[0] > 0 || yuko [1] > 0){
+
+        if (yuko[0] > yuko[1]){
+          printf("O vencedor eh o competidor 1\n");
+
+        }else if (yuko[0] < yuko[1]){
+          printf("O vencedor eh o competidor 2\n");
+
+        }
+      }else {
+        printf("Empate entre os competidores 1 e 2\n");
+      }
+
+    }
+
+      
+
+}
+void levantPeso(){
+  int vencedor;
+  float maiorPeso = -1;
+  int qtdCompetidores;
+
+  printf("\nDigite a quantidade de competidores\t");
+  scanf("%d",&qtdCompetidores);
+  int competidores [qtdCompetidores];
+
+  for (int i = 0; i < qtdCompetidores;i++){
+    printf("\nDigite o peso levantado:\t");
+    scanf("%d",&competidores[i]);
+  }
+
+  for (int i = 0; qtdCompetidores; i++){
+    if(competidores[i] > maiorPeso){
+      maiorPeso = competidores[i];
+      vencedor = i;
+    }
+  }
+
+  printf("\nO competidor %i eh o vencedor",vencedor);
+
+}
+
+int main(void) {
+
+  int opcao;
+  
+  do{
+    printf("Selecione a sua modalidade: \n1- ARREMESSO DE PESO \n2 - GINASTICA ARTISTICA \n3 - JUDO \n4 - LEVANTAMENTO DE PESO \n0 - SAIR\n");
+    scanf("%d", &opcao);
+
+    switch (opcao){
+      case 1:
+        arremessoPeso();
+        break;
+      case 2:
+        ginArtistica();
+        break;
+      case 3:
+        judo();
+        break;
+      case 4:
+        levantPeso();
+        break;
+
+
+    }
+
+
+  }while(opcao != 0);
+
+  return 0;
+}
