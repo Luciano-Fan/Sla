@@ -1,4 +1,4 @@
-let nome = "Nome da Locadora";
+let nome = ["Netflix", "Hulu", "Amazon Prime"];
 let genero = ["Terror", "Drama", "Acao", "Infantil"];
 let terror = ["O Exorcista", "It: A Coisa", "A Profecia", "1408", "Drácula de Bram Stoker"];
 let drama = ["Perfume de Mulher", "O Poderoso Chefão", "Estrelas Além do Tempo", "Gênio Indomável", "Sociedade dos Poetas Mortos"];
@@ -7,21 +7,27 @@ let infantil = ["Toy Story", "Hotel Transilvânia", "Space Jam", "Uma Cilada par
 
 let arrayGenero = [terror, drama, acao, infantil];
 
-
-
 let arrayLocadora = function () {
-    console.log(nome);
+    document.write("<strong> Locadoras </strong>" + "<br>")
+    for (let i = 0; i < nome.length; i++) {
+        document.write(nome[i] + "<br>")
+    }
+
     for (let i = 0; i < arrayGenero.length; i++) {
-        console.log(genero[i]);
+        document.write("<hr> <strong>" + genero[i] + "</strong> <br>")
+
         for (let j = 0; j < arrayGenero[i].length; j++) {
-            console.log(arrayGenero[i][j]);
+            document.write(arrayGenero[i][j] + "<br>")
         }
+
     }
 }
 
-let arrayDeciToBi = function (numeroDeci) {
+let arrayDeciToBi = function () {
+    let numeroDeci = document.getElementById("decimal1").value
     let arrayBits = [];
-    flag = true;
+    let flag = true;
+    
     while (flag) {
         arrayBits.push(numeroDeci % 2);
         numeroDeci = Math.floor(numeroDeci / 2);
@@ -31,20 +37,28 @@ let arrayDeciToBi = function (numeroDeci) {
         }
     }
     for (let i = arrayBits.length - 1; i >= 0; i--) {
-        console.log(arrayBits[i]);
+        document.write(arrayBits[i]);
     }
 }
 
-let arrayConveBase = function (numeroDeci, base) {
+let arrayConveBase = function () {
+    let numeroDeci = document.getElementById("decimal2").value
+    let base = document.getElementById("base").value
+    
     let arrayBits = [];
-    let arrayHexa = ["A","B","C","D","E","F"];
+    let arrayHexa = ["A", "B", "C", "D", "E", "F"];
     let resto = 0;
-    flag = true;
+    let flag = true
+
+    if (base == 10) {
+        return document.write(10);
+    }
+
     while (flag) {
         resto = numeroDeci % base;
         numeroDeci = Math.floor(numeroDeci / base);
         if (resto > 9) {
-            arrayBits.push(arrayHexa[resto-10]);
+            arrayBits.push(arrayHexa[resto - 10]);
         } else {
             arrayBits.push(resto);
         }
@@ -55,6 +69,7 @@ let arrayConveBase = function (numeroDeci, base) {
     }
 
     for (let i = arrayBits.length - 1; i >= 0; i--) {
-        console.log(arrayBits[i]);
+        document.write(arrayBits[i]);
+
     }
 }
