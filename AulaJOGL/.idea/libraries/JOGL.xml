@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="JOGL">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Documents/joglWin64/joglWin64" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Documents/joglWin64/joglWin64" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Documents/joglWin64/joglWin64" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Documents/joglWin64/joglWin64" recursive="false" type="SOURCES" />
+  </library>
+</component>
